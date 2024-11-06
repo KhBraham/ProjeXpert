@@ -3,22 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProjeXpret-MembrePage</title>
+    <title>ProjeXpret</title>
     <link rel="icon" href="logo_pr.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap" rel="stylesheet">
-
-    
 </head>
 <body class="size-full bg-slate-100 relative">
-
-        <nav class="fixed top-0 left-0 w-full flex justify-between items-center gap-20 sm:gap-x-10 p-3 bg-slate-200">
-            
     
-            <div class="flex gap-4">
-                <!-- Bouton de retour -->
-                <a href="#" class="flex  items-center justify-center bg-yellow-400 text-black  rounded-full px-4 py-2 w-20">
+    <div class="bg-slate-200 bg-opacity-50 z-0 absolute size-full inset-0 rounded-tr-full -translate-x-1/3"></div>
+    <div class="size-full z-10 relative overflow-auto grid grid-rows-[auto,1fr]">
+        <nav class="z-30 top-0 left-0 w-full flex justify-between items-center gap-15 sm:gap-x-10 p-3 bg-slate-200">
+            <div class="flex justify-center items-center w-auto gap-4">
+                <a href="dashboard.html" class="flex  items-center justify-center bg-yellow-400 text-black  rounded-full px-4 py-2 w-20">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 " viewBox="0 0 20 20" fill="currentColor">
                         <path fill-rule="evenodd" d="M10 18a1 1 0 01-.707-.293l-7-7a1 1 0 010-1.414l7-7a1 1 0 011.414 1.414L4.414 10l6.293 6.293A1 1 0 0110 18z" clip-rule="evenodd" />
                     </svg>
@@ -26,14 +22,13 @@
                 <button onclick="show_side_bar()" title="menu" class="sm:hidden hover:shadow-md">
                     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 464.205 464.205" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-8 h-8"><g><path d="M435.192 406.18H29.013C12.989 406.18 0 393.19 0 377.167s12.989-29.013 29.013-29.013h406.18c16.023 0 29.013 12.99 29.013 29.013-.001 16.023-12.99 29.013-29.014 29.013zM435.192 261.115H29.013C12.989 261.115 0 248.126 0 232.103s12.989-29.013 29.013-29.013h406.18c16.023 0 29.013 12.989 29.013 29.013s-12.99 29.012-29.014 29.012zM435.192 116.051H29.013C12.989 116.051 0 103.062 0 87.038s12.989-29.013 29.013-29.013h406.18c16.023 0 29.013 12.989 29.013 29.013s-12.99 29.013-29.014 29.013z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
                 </button>
-                
-                <h2 class="text-xl ml-4 font-bold">
+                <a href="dashboard.html" target="_self" class="text-xl font-bold">
                     ProjeXpret
-                </h2>
+                </a>
             </div>
-            <div class="flex gap-2 relative">
+            <div class="flex items-center gap-2 sm:gap-3 grow justify-end relative">
                 <button title="notifications" id="notifications" class="relative" onclick="toggleNotifications()">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-slate-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-9 sm:size-11 text-slate-800">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
                     </svg>
                 </button>
@@ -45,7 +40,7 @@
                     </ul>
                 </div>
                 <button title="profil" id="profil" class="rounded-full overflow-hidden" onclick="toggleProfil()">
-                    <img src="https://picsum.photos/200" alt="image" class="size-11">
+                    <img src="https://picsum.photos/200" alt="image" class="size-9 sm:size-11">
                 </button>
                 <div id="profilDropdown" class="hidden absolute top-full right-2 mt-1  w-64 bg-white border border-gray-300 rounded-lg shadow-lg">
                     <div class="flex flex-col gap-2 p-2">
@@ -80,14 +75,15 @@
                     </div>
                 </div>
         </nav>
-        <div class="flex grow pt-[4.1rem]">
-            <div id="side-bar" class="bg-slate-50 w-96 border-x-4-slate-500 hidden sm:block flex flex-col items-center gap-3 p-5 ">
+        
+        <div class="flex grow overflow-auto relative">
+            <div id="side-bar" class="bg-slate-50 w-70 sm:w-96 border-x-4-slate-500 absolute h-full sm:sticky sm:top-0 hidden sm:flex flex-col items-center gap-3 p-5 ">
                 <button class="flex gap-2 bg-slate-300 justify-start items-center px-4 py-2 rounded-md w-full">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 511 511.998" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-6 h-6"><g><path d="M501.426 238.11 419.203 197l82.223-41.113c14.707-7.352 14.722-28.414 0-35.778l-236-118a20.022 20.022 0 0 0-17.89 0l-236 118c-14.708 7.356-14.723 28.418 0 35.778L93.757 197l-82.223 41.11c-14.707 7.355-14.722 28.413 0 35.777L93.758 315l-82.223 41.11c-14.707 7.355-14.722 28.413 0 35.777l236 118a20.01 20.01 0 0 0 17.89 0l236-118c14.708-7.356 14.723-28.414 0-35.778L419.204 315l82.223-41.113c14.707-7.352 14.722-28.414 0-35.778zM256.48 42.36 447.758 138 256.48 233.637 65.203 138zM447.758 374 256.48 469.637 65.203 374l73.277-36.64 109.055 54.527a20.01 20.01 0 0 0 17.89 0l109.055-54.528zM256.48 351.637 65.203 256l73.277-36.64 109.055 54.527a20.01 20.01 0 0 0 17.89 0l109.055-54.528L447.758 256zm0 0" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
                     </div>
                     <div class="">
-                        <p class="text-xl font-bold ">Projets</p>
+                        <a href="dashboard.html" target="_self" class="text-xl font-bold">Projets</a>
                     </div>
                 </button>
                 <button class="flex gap-2 justify-start items-center px-4 py-2 rounded-md w-full">
@@ -107,107 +103,176 @@
                     </div>
                 </button>
             </div>
-<!-- Project Card -->
-<div class="flex flex-col m-2">     
-    <section class="bg-[#F9EADC] p-6 rounded-xl shadow-md mx-auto my-8 mb-4 w-full max-w-5xl flex flex-col md:flex-row items-center justify-between">
-        <div class="m-2">
-            <h2 class="text-3xl font-bold mb-2">FitMind: Mental Wellness <br>Tracker</h2>
-            <p class="text-gray-700 text-sm">
-                FitMind is an app that helps users track their mental health through mood journaling, 
-                stress level assessments, and mindfulness exercises. With personalized insights and tips, 
-                the app supports mental well-being by encouraging daily self-care habits and fostering 
-                emotional resilience.
-            </p>
-        </div>
-        <div class="flex items-center justify-center w-full h-auto">
-            <div>
-                <svg class="w-32 h-32" viewBox="0 0 40 40">
-                    <!-- Background circle -->
-                    <circle
-                        class="text-slate-300"
-                        stroke="currentColor"
-                        stroke-width="6"
-                        fill="none"
-                        cx="20"
-                        cy="20"
-                        r="16"
-                    />
-                    <!-- Foreground circle (for percentage) -->
-                    <circle
-                        class="text-orange-500"
-                        stroke="currentColor"
-                        stroke-width="6"
-                        stroke-dasharray="65, 100"
-                        fill="none"
-                        cx="20"
-                        cy="20"
-                        r="16"
-                    />
-                    <!-- Adjusted position for centered text -->
-                    <text x="20" y="22" class="percentage" text-anchor="middle" fill="#ff9f1c" font-size="8" font-weight="bold">65%</text>
-                </svg>
+            <div class="h-full overflow-auto">
+                <div class="grow flex flex-col p-4">
+                    <section class="bg-[#F9EADC] p-7 rounded-xl shadow-md  flex flex-col ">
+                        <div class="mb-4">
+                            <h2 class="text-lg text-left sm:text-2xl font-bold mb-3">FitMind: Mental Wellness Tracker</h2>
+                            
+                        </div>
+                        <div class="flex items-center justify-center w-full gap-2 h-auto">
+                            <div>
+                                <p class="text-sm text-gray-700">
+                                    FitMind is an app that helps users track their mental health through mood journaling, 
+                                    stress level assessments, and mindfulness exercises. With personalized insights and tips, 
+                                    the app supports mental well-being by encouraging daily self-care habits and fostering 
+                                    emotional resilience.
+                                </p>
+                            </div>
+                            <div >
+                                <svg class="size-28 sm:size-40" viewBox="0 0 40 40">
+                                    <!-- Background circle -->
+                                    <circle
+                                        class="text-slate-300"
+                                        stroke="currentColor"
+                                        stroke-width="6"
+                                        fill="none"
+                                        cx="20"
+                                        cy="20"
+                                        r="16"
+                                    />
+                                    <!-- Foreground circle (for percentage) -->
+                                    <circle
+                                        class="text-orange-500"
+                                        stroke="currentColor"
+                                        stroke-width="6"
+                                        stroke-dasharray="75, 100"
+                                        fill="none"
+                                        cx="20"
+                                        cy="20"
+                                        r="16"
+                                    />
+                                    <!-- Adjusted position for centered text -->
+                                    <text x="20" y="22" class="percentage" text-anchor="middle" fill="#ff9f1c" font-size="8" font-weight="bold">75%</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </section>
+                    <!-- Team Members -->
+                    <section class="w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2">
+                        <div class="bg-[#E4CFCF] p-4 rounded-lg shadow-md mt-3">
+                            <div>
+                                <h3 class="font-bold">Design the homepage</h3>
+                                <p class="text-sm mt-2 text-gray-600">
+                                    FitMind is an app that helps users track their mental health through mood journaling,
+                                    <span class="text-blue-500">voir plus...</span>
+                                </p>
+                            </div>
+                            <div class="flex mt-2 justify-end">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 408.576 408.576" style="enable-background:new 0 0 512 512" xml:space="preserve" class="size-9"><g><path d="M204.288 0C91.648 0 0 91.648 0 204.288s91.648 204.288 204.288 204.288 204.288-91.648 204.288-204.288S316.928 0 204.288 0zm114.176 150.528-130.56 129.536c-7.68 7.68-19.968 8.192-28.16.512L90.624 217.6c-8.192-7.68-8.704-20.48-1.536-28.672 7.68-8.192 20.48-8.704 28.672-1.024l54.784 50.176L289.28 121.344c8.192-8.192 20.992-8.192 29.184 0s8.192 20.992 0 29.184z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                            </div>
+                        </div>
+                        <div class="bg-[#E4CFCF] p-4 rounded-lg shadow-md mt-3">
+                            <div>
+                                <h3 class="font-bold">Design the homepage</h3>
+                                <p class="text-sm mt-2 text-gray-600">
+                                    FitMind is an app that helps users track their mental health through mood journaling,
+                                    <span class="text-blue-500">voir plus...</span>
+                                </p>
+                            </div>
+                            <div class="flex mt-2 justify-end">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 408.576 408.576" style="enable-background:new 0 0 512 512" xml:space="preserve" class="size-9"><g><path d="M204.288 0C91.648 0 0 91.648 0 204.288s91.648 204.288 204.288 204.288 204.288-91.648 204.288-204.288S316.928 0 204.288 0zm114.176 150.528-130.56 129.536c-7.68 7.68-19.968 8.192-28.16.512L90.624 217.6c-8.192-7.68-8.704-20.48-1.536-28.672 7.68-8.192 20.48-8.704 28.672-1.024l54.784 50.176L289.28 121.344c8.192-8.192 20.992-8.192 29.184 0s8.192 20.992 0 29.184z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                            </div>
+                        </div>
+                        <div class="bg-[#E4CFCF] p-4 rounded-lg shadow-md mt-3">
+                            <div>
+                                <h3 class="font-bold">Design the homepage</h3>
+                                <p class="text-sm mt-2 text-gray-600">
+                                    FitMind is an app that helps users track their mental health through mood journaling,
+                                    <span class="text-blue-500">voir plus...</span>
+                                </p>
+                            </div>
+                            <div class="flex mt-2 justify-end">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 408.576 408.576" style="enable-background:new 0 0 512 512" xml:space="preserve" class="size-9"><g><path d="M204.288 0C91.648 0 0 91.648 0 204.288s91.648 204.288 204.288 204.288 204.288-91.648 204.288-204.288S316.928 0 204.288 0zm114.176 150.528-130.56 129.536c-7.68 7.68-19.968 8.192-28.16.512L90.624 217.6c-8.192-7.68-8.704-20.48-1.536-28.672 7.68-8.192 20.48-8.704 28.672-1.024l54.784 50.176L289.28 121.344c8.192-8.192 20.992-8.192 29.184 0s8.192 20.992 0 29.184z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                            </div>
+                        </div>
+                        <div class="bg-[#E4CFCF] p-4 rounded-lg shadow-md mt-3">
+                            <div>
+                                <h3 class="font-bold">Design the homepage</h3>
+                                <p class="text-sm mt-2 text-gray-600">
+                                    FitMind is an app that helps users track their mental health through mood journaling,
+                                    <span class="text-blue-500">voir plus...</span>
+                                </p>
+                            </div>
+                            <div class="flex mt-2 justify-end">
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 408.576 408.576" style="enable-background:new 0 0 512 512" xml:space="preserve" class="size-9"><g><path d="M204.288 0C91.648 0 0 91.648 0 204.288s91.648 204.288 204.288 204.288 204.288-91.648 204.288-204.288S316.928 0 204.288 0zm114.176 150.528-130.56 129.536c-7.68 7.68-19.968 8.192-28.16.512L90.624 217.6c-8.192-7.68-8.704-20.48-1.536-28.672 7.68-8.192 20.48-8.704 28.672-1.024l54.784 50.176L289.28 121.344c8.192-8.192 20.992-8.192 29.184 0s8.192 20.992 0 29.184z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                            </div>
+                        </div>
+                        <div class="bg-[#E4CFCF] p-4 rounded-lg shadow-md mt-3">
+                            <div>
+                                <h3 class="font-bold">Design the homepage</h3>
+                                <p class="text-sm mt-2 text-gray-600">
+                                    FitMind is an app that helps users track their mental health through mood journaling,
+                                    <span class="text-blue-500">voir plus...</span>
+                                </p>
+                            </div>
+                            <div class="flex mt-2 justify-end">
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class="size-10"><g><path d="M16 1a15 15 0 1 0 15 15A15.017 15.017 0 0 0 16 1zm-4.307 9.893 3.6-3.6a1 1 0 0 1 1.416 0l3.6 3.6a1 1 0 1 1-1.414 1.414L17 10.414V19.2a1 1 0 1 1-2 0v-8.786l-1.893 1.893a1 1 0 1 1-1.414-1.414zM23.3 22a1 1 0 0 1-1 1H9.7a1 1 0 0 1-1-1v-2.8a1 1 0 0 1 2 0V21h10.6v-1.8a1 1 0 0 1 2 0z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-[#E4CFCF] p-4 rounded-lg shadow-md mt-3">
+                            <div>
+                                <h3 class="font-bold">Design the homepage</h3>
+                                <p class="text-sm mt-2 text-gray-600">
+                                    FitMind is an app that helps users track their mental health through mood journaling,
+                                    <span class="text-blue-500">voir plus...</span>
+                                </p>
+                            </div>
+                            <div class="flex mt-2 justify-end">
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class="size-10"><g><path d="M16 1a15 15 0 1 0 15 15A15.017 15.017 0 0 0 16 1zm-4.307 9.893 3.6-3.6a1 1 0 0 1 1.416 0l3.6 3.6a1 1 0 1 1-1.414 1.414L17 10.414V19.2a1 1 0 1 1-2 0v-8.786l-1.893 1.893a1 1 0 1 1-1.414-1.414zM23.3 22a1 1 0 0 1-1 1H9.7a1 1 0 0 1-1-1v-2.8a1 1 0 0 1 2 0V21h10.6v-1.8a1 1 0 0 1 2 0z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-[#E4CFCF] p-4 rounded-lg shadow-md mt-3">
+                            <div>
+                                <h3 class="font-bold">Design the homepage</h3>
+                                <p class="text-sm mt-2 text-gray-600">
+                                    FitMind is an app that helps users track their mental health through mood journaling,
+                                    <span class="text-blue-500">voir plus...</span>
+                                </p>
+                            </div>
+                            <div class="flex mt-2 justify-end">
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class="size-10"><g><path d="M16 1a15 15 0 1 0 15 15A15.017 15.017 0 0 0 16 1zm-4.307 9.893 3.6-3.6a1 1 0 0 1 1.416 0l3.6 3.6a1 1 0 1 1-1.414 1.414L17 10.414V19.2a1 1 0 1 1-2 0v-8.786l-1.893 1.893a1 1 0 1 1-1.414-1.414zM23.3 22a1 1 0 0 1-1 1H9.7a1 1 0 0 1-1-1v-2.8a1 1 0 0 1 2 0V21h10.6v-1.8a1 1 0 0 1 2 0z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-[#E4CFCF] p-4 rounded-lg shadow-md mt-3">
+                            <div>
+                                <h3 class="font-bold">Design the homepage</h3>
+                                <p class="text-sm mt-2 text-gray-600">
+                                    FitMind is an app that helps users track their mental health through mood journaling,
+                                    <span class="text-blue-500">voir plus...</span>
+                                </p>
+                            </div>
+                            <div class="flex mt-2 justify-end">
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class="size-10"><g><path d="M16 1a15 15 0 1 0 15 15A15.017 15.017 0 0 0 16 1zm-4.307 9.893 3.6-3.6a1 1 0 0 1 1.416 0l3.6 3.6a1 1 0 1 1-1.414 1.414L17 10.414V19.2a1 1 0 1 1-2 0v-8.786l-1.893 1.893a1 1 0 1 1-1.414-1.414zM23.3 22a1 1 0 0 1-1 1H9.7a1 1 0 0 1-1-1v-2.8a1 1 0 0 1 2 0V21h10.6v-1.8a1 1 0 0 1 2 0z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="bg-[#E4CFCF] p-4 rounded-lg shadow-md mt-3">
+                            <div>
+                                <h3 class="font-bold">Design the homepage</h3>
+                                <p class="text-sm mt-2 text-gray-600">
+                                    FitMind is an app that helps users track their mental health through mood journaling,
+                                    <span class="text-blue-500">voir plus...</span>
+                                </p>
+                            </div>
+                            <div class="flex mt-2 justify-end">
+                                <button>
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 32 32" style="enable-background:new 0 0 512 512" xml:space="preserve" class="size-10"><g><path d="M16 1a15 15 0 1 0 15 15A15.017 15.017 0 0 0 16 1zm-4.307 9.893 3.6-3.6a1 1 0 0 1 1.416 0l3.6 3.6a1 1 0 1 1-1.414 1.414L17 10.414V19.2a1 1 0 1 1-2 0v-8.786l-1.893 1.893a1 1 0 1 1-1.414-1.414zM23.3 22a1 1 0 0 1-1 1H9.7a1 1 0 0 1-1-1v-2.8a1 1 0 0 1 2 0V21h10.6v-1.8a1 1 0 0 1 2 0z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                                </button>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             </div>
         </div>
-    </section>
-
-    <!-- Team Members -->
-<div class="bg-gray-100 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-4 mt-0.5">
-    <!-- Bloc 1 -->
-    <div class="relative bg-pink-200 rounded-lg shadow-md p-5 m-2 flex flex-col justify-between min-h-[100px]"> 
-        <h3 class="font-belanosima text-2xl font-semibold text-black mb-3">Design the homepage</h3>
-        <div class="absolute bottom-2 right-2 w-8 h-8 bg-lime-700 rounded-full flex items-center justify-center">
-            <img src="base1.png" class="w-full h-full rounded-full object-cover">
-        </div>
     </div>
 
-    <!-- Bloc 2 -->
-    <div class="relative bg-pink-200 rounded-lg shadow-md p-5 m-2 flex flex-col justify-between min-h-[100px]">
-        <h3 class="font-belanosima text-2xl font-semibold text-black mb-3">Develop the mood journaling form</h3>
-        <div class="absolute bottom-2 right-2 w-8 h-8 bg-lime-700 rounded-full flex items-center justify-center">
-            <img src="base1.png" class="w-full h-full rounded-full object-cover">
-        </div>
-    </div>
-
-    <!-- Bloc 3 -->
-    <div class="relative bg-pink-200 rounded-lg shadow-md p-5 m-2 flex flex-col justify-between min-h-[100px]">
-        <h3 class="font-belanosima text-2xl font-semibold text-black mb-3">Build the stress level assessment module</h3>
-        <div class="absolute bottom-2 right-2 w-8 h-8 bg-lime-700 rounded-full flex items-center justify-center">
-            <img src="base1.png" class="w-full h-full rounded-full object-cover">
-        </div>
-    </div>
-
-    <!-- Bloc 4 -->
-    <div class="relative bg-pink-200 rounded-lg shadow-md p-5 m-2 flex flex-col justify-between min-h-[100px]">
-        <h3 class="font-belanosima text-2xl font-semibold text-black mb-3">Create the database for mood tracking</h3>
-        <div class="absolute bottom-2 right-2 w-8 h-8 bg-lime-700 rounded-full flex items-center justify-center">
-            <img src="base1.png" class="w-full h-full rounded-full object-cover">
-        </div>
-    </div>
-
-    <!-- Bloc 5 -->
-    <div class="relative bg-pink-200 rounded-lg shadow-md p-5 m-2 flex flex-col justify-between min-h-[100px]">
-        <h3 class="font-belanosima text-2xl font-semibold text-black mb-3">Display personalized insights</h3>
-        <div class="absolute bottom-2 right-0 w-14 h-8 flex items-center justify-center translate-x-5">
-            <img src="base2.png" class="object-contain w-full h-full">
-        </div>
-    </div>
-
-    <!-- Bloc 6 -->
-    <div class="relative bg-pink-200 rounded-lg shadow-md p-5 m-2 flex flex-col justify-between min-h-[100px]">
-        <h3 class="font-belanosima text-2xl font-semibold text-black mb-3">Add daily reminder notifications</h3>
-        <div class="absolute bottom-2 right-0 w-14 h-8 flex items-center justify-center translate-x-5">
-            <img src="base2.png" class="object-contain w-full h-full">
-        </div>
-    </div>
-</div>
-
-
-</div>
-
-</div>
-
-</div>
-
- 
 </body>
 </html>
