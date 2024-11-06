@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="size-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjeXpret</title>
+    <link rel="icon" href="logo_pr.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" /> -->
+
+</head>
+<body class="size-full relative">
+    <div class="hidden md:block absolute bottom-8 left-8">
+        <div class="size-12 rounded-full bg-slate-200"></div>
+    </div>
+    <div class="hidden md:block absolute top-3 right-3">
+        <div class="size-6 rounded-full bg-slate-500"></div>
+    </div>
+    <div class="md:flex size-full overflow-auto p-8 sm:p-0 bg-cover md:bg-none" style="background-image: url('signIN.jpg');">
+        <div class="hidden md:block w-full h-64 md:w-1/2 md:h-full bg-cover" style="background-image: url('signIN.jpg');"></div>
+        
+        <div class="bg-slate-200 w-full min-h-full rounded-2xl md:rounded-none md:w-1/2 p-6">
+            <h1 class="font-bold text-2xl mb-4 text-center md:text-right md:pt-4 md:pb-4 md:pr-10">ProjeXpert</h1>
+            
+            <div class="w-full flex flex-col gap-5 items-center justify-center px-8 max-w-md mx-auto">
+                <div class="space-y-2">
+                    <h1 class="text-xl font-bold text-gray-900">
+                        Connexion
+                    </h1>
+                    <p class="text-gray-500">
+                        Bienvenue à nouveau, veuillez saisir vos coordonnées
+                    </p>
+                </div>
+                <div class=" flex flex-col gap-3 justify-center w-full">
+                    <button class="flex gap-2 border-2 border-black w-full  items-center  justify-center p-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-5" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M113.47 309.408 95.648 375.94l-65.139 1.378C11.042 341.211 0 299.9 0 256c0-42.451 10.324-82.483 28.624-117.732h.014L86.63 148.9l25.404 57.644c-5.317 15.501-8.215 32.141-8.215 49.456.002 18.792 3.406 36.797 9.651 53.408z" style="" fill="#fbbb00" data-original="#fbbb00"></path><path d="M507.527 208.176C510.467 223.662 512 239.655 512 256c0 18.328-1.927 36.206-5.598 53.451-12.462 58.683-45.025 109.925-90.134 146.187l-.014-.014-73.044-3.727-10.338-64.535c29.932-17.554 53.324-45.025 65.646-77.911h-136.89V208.176h245.899z" style="" fill="#518ef8" data-original="#518ef8" class=""></path><path d="m416.253 455.624.014.014C372.396 490.901 316.666 512 256 512c-97.491 0-182.252-54.491-225.491-134.681l82.961-67.91c21.619 57.698 77.278 98.771 142.53 98.771 28.047 0 54.323-7.582 76.87-20.818l83.383 68.262z" style="" fill="#28b446" data-original="#28b446" class=""></path><path d="m419.404 58.936-82.933 67.896C313.136 112.246 285.552 103.82 256 103.82c-66.729 0-123.429 42.957-143.965 102.724l-83.397-68.276h-.014C71.23 56.123 157.06 0 256 0c62.115 0 119.068 22.126 163.404 58.936z" style="" fill="#f14336" data-original="#f14336"></path></g></svg>
+                        <div>Continuer avec Google</div>
+                    </button>
+                    <button class="flex gap-2 border-2 border-black w-full  items-center  justify-center p-2 rounded-full">
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" class="w-5" x="0" y="0" viewBox="0 0 1227 1227" style="enable-background:new 0 0 512 512" xml:space="preserve" class=""><g><path d="M654.53 592.55 930.65 987.5H817.33L592.01 665.22v-.02l-33.08-47.31-263.21-376.5h113.32l212.41 303.85z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M1094.42 0H132.58C59.36 0 0 59.36 0 132.58v961.84C0 1167.64 59.36 1227 132.58 1227h961.84c73.22 0 132.58-59.36 132.58-132.58V132.58C1227 59.36 1167.64 0 1094.42 0zm-311.8 1040.52L554.61 708.68l-285.47 331.84h-73.78l326.49-379.5-326.49-475.17h249.02l215.91 314.23 270.32-314.23h73.78l-311.33 361.9h-.02l338.6 492.77z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                        <div>Continuer avec X</div>
+                    </button>
+                </div>
+    
+                <div class="flex items-center justify-center my-4 w-full">
+                    <hr class="border-t border-gray-400 w-full mx-2">
+                    <span class="font-bold text-gray-500 mx-2">OU</span>
+                    <hr class="border-t border-gray-400 w-full mx-2">
+                </div>
+    
+                <div class="w-full">
+                    <form class="space-y-4 " action="#">
+                        <div>
+                            <label for="email" class="block mb-2 text-sm font-medium text-gray-500">Nom d'utilisateur ou adresse e-mail</label>
+                            <input type="email" name="email" id="email" class="bg-gray-50 border w-full max-w-full border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block p-2.5 " placeholder="name@company.com" required="">
+                        </div>
+                        <div>
+                            <div class="flex justify-between items-center">
+                                <label for="password" class="block mb-2 text-sm font-medium text-gray-500">Votre mot de passe</label>
+                                <div>
+                                    <button class="flex gap-1 mb-2 text-sm font-medium text-gray-500">
+                                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" class="h-5" x="0" y="0" viewBox="0 0 128 128" style="enable-background:new 0 0 512 512" xml:space="preserve" class="hovered-paths"><g><path d="m79.891 65.078 7.27-7.27C87.69 59.787 88 61.856 88 64c0 13.234-10.766 24-24 24-2.144 0-4.213-.31-6.192-.839l7.27-7.27a15.929 15.929 0 0 0 14.813-14.813zm47.605-3.021c-.492-.885-7.47-13.112-21.11-23.474l-5.821 5.821c9.946 7.313 16.248 15.842 18.729 19.602C114.553 71.225 95.955 96 64 96c-4.792 0-9.248-.613-13.441-1.591l-6.573 6.573C50.029 102.835 56.671 104 64 104c41.873 0 62.633-36.504 63.496-38.057a3.997 3.997 0 0 0 0-3.886zm-16.668-39.229-88 88C22.047 111.609 21.023 112 20 112s-2.047-.391-2.828-1.172a3.997 3.997 0 0 1 0-5.656l11.196-11.196C10.268 83.049 1.071 66.964.504 65.943a4 4 0 0 1 0-3.887C1.367 60.504 22.127 24 64 24c10.827 0 20.205 2.47 28.222 6.122l12.95-12.95c1.563-1.563 4.094-1.563 5.656 0s1.563 4.094 0 5.656zM34.333 88.011 44.46 77.884C41.663 73.96 40 69.175 40 64c0-13.234 10.766-24 24-24 5.175 0 9.96 1.663 13.884 4.459l8.189-8.189C79.603 33.679 72.251 32 64 32 32.045 32 13.447 56.775 8.707 63.994c3.01 4.562 11.662 16.11 25.626 24.017zm15.934-15.935 21.809-21.809C69.697 48.862 66.958 48 64 48c-8.822 0-16 7.178-16 16 0 2.958.862 5.697 2.267 8.076z" fill="#000000" opacity="1" data-original="#000000" class="hovered-path"></path></g></svg>
+                                        <div>Cacher</div>
+                                    </button>
+                                </div>
+                            </div>
+                            <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-primary-600 focus:border-primary-600 block w-full p-2.5 " required="">
+                        </div>
+                        
+                        <div class="flex justify-end">
+                            <div class="ml-3 text-sm">
+                                <a href="#" class="font-light text-base text-gray-500 underline">Oubliez votre mot de passe</a>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="submit" class=" text-white bg-blue-600  font-medium rounded-lg text-sm px-10 py-2.5 text-center"><a href="dashboard.html">Connexion</a></button>
+                            <p class="text-sm font-light pt-4 text-gray-500 dark:text-gray-400">
+                                Je n'ai pas de compte? <a href="signUp.html" class="font-medium text-primary-600 hover:underline dark:text-primary-500">S'inscrire</a>
+                            </p>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+</body>
+</html>

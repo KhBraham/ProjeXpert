@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en" class="size-full">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProjeXpret-MembrePage</title>
+    <link rel="icon" href="logo_pr.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Belanosima&display=swap" rel="stylesheet">
+
+    
+</head>
+<body class="size-full bg-slate-100 relative">
+
+        <nav class="fixed top-0 left-0 w-full flex justify-between items-center gap-20 sm:gap-x-10 p-3 bg-slate-200">
+            
+    
+            <div class="flex gap-4">
+                <!-- Bouton de retour -->
+                <a href="#" class="flex  items-center justify-center bg-yellow-400 text-black  rounded-full px-4 py-2 w-20">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 " viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a1 1 0 01-.707-.293l-7-7a1 1 0 010-1.414l7-7a1 1 0 011.414 1.414L4.414 10l6.293 6.293A1 1 0 0110 18z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+                <button onclick="show_side_bar()" title="menu" class="sm:hidden hover:shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 464.205 464.205" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-8 h-8"><g><path d="M435.192 406.18H29.013C12.989 406.18 0 393.19 0 377.167s12.989-29.013 29.013-29.013h406.18c16.023 0 29.013 12.99 29.013 29.013-.001 16.023-12.99 29.013-29.014 29.013zM435.192 261.115H29.013C12.989 261.115 0 248.126 0 232.103s12.989-29.013 29.013-29.013h406.18c16.023 0 29.013 12.989 29.013 29.013s-12.99 29.012-29.014 29.012zM435.192 116.051H29.013C12.989 116.051 0 103.062 0 87.038s12.989-29.013 29.013-29.013h406.18c16.023 0 29.013 12.989 29.013 29.013s-12.99 29.013-29.014 29.013z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                </button>
+                
+                <h2 class="text-xl ml-4 font-bold">
+                    ProjeXpret
+                </h2>
+            </div>
+            <div class="flex gap-2 relative">
+                <button title="notifications" id="notifications" class="relative" onclick="toggleNotifications()">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-10 text-slate-800">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+                    </svg>
+                </button>
+                <div id="notificationDropdown" class="hidden absolute top-full right-12 mt-1  w-64 bg-white border border-gray-300 rounded-lg shadow-lg">
+                    <ul class="p-2">
+                        <li class="border-b p-2">Notification 1</li>
+                        <li class="border-b p-2">Notification 2</li>
+                        <li class="p-2">Notification 3</li>
+                    </ul>
+                </div>
+                <button title="profil" id="profil" class="rounded-full overflow-hidden" onclick="toggleProfil()">
+                    <img src="https://picsum.photos/200" alt="image" class="size-11">
+                </button>
+                <div id="profilDropdown" class="hidden absolute top-full right-2 mt-1  w-64 bg-white border border-gray-300 rounded-lg shadow-lg">
+                    <div class="flex flex-col gap-2 p-2">
+                        <div class="pb-1 border-b-2">
+                            <p class="font-semibold">NOM Prenom</p>
+                            <p class="text-gray-500">nom.prenom@gmail.com</p>
+                        </div>
+                        <div class="flex justify-start items-center pl-2 m-2 gap-2">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-5 h-5"><g><path d="M483.585 104.274H266.834c-12.396-43.627-52.598-75.673-100.144-75.673-47.547 0-87.749 32.046-100.144 75.673H28.413C12.721 104.273 0 116.995 0 132.686S12.721 161.1 28.413 161.1h38.131c12.396 43.627 52.597 75.673 100.144 75.673 47.546 0 87.749-32.046 100.144-75.673h216.753c15.692 0 28.413-12.722 28.413-28.413s-12.722-28.413-28.413-28.413zm-316.896 75.671c-26.06 0-47.26-21.201-47.26-47.26s21.2-47.26 47.26-47.26 47.26 21.201 47.26 47.26-21.2 47.26-47.26 47.26zM483.586 350.899h-38.2c-12.396-43.627-52.597-75.673-100.144-75.673s-87.749 32.046-100.144 75.673H28.413C12.721 350.899 0 363.621 0 379.312c0 15.692 12.721 28.413 28.413 28.413h216.685c12.396 43.627 52.597 75.673 100.144 75.673s87.749-32.046 100.144-75.673h38.2c15.692 0 28.413-12.722 28.413-28.413.001-15.692-12.721-28.413-28.413-28.413zm-138.344 75.673c-26.06 0-47.26-21.201-47.26-47.26 0-26.06 21.201-47.26 47.26-47.26 26.06 0 47.26 21.201 47.26 47.26.001 26.06-21.201 47.26-47.26 47.26z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                            </div>
+                            <div>
+                                <p class="font-medium">Paramètres de Profil</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-start items-center pl-2 m-2 gap-2">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 512 512" class="w-5 h-5" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><path d="M256 0C114.509 0 0 114.496 0 256c0 141.489 114.496 256 256 256 141.491 0 256-114.496 256-256C512 114.509 397.504 0 256 0zm0 476.279c-121.462 0-220.279-98.816-220.279-220.279S134.538 35.721 256 35.721c121.463 0 220.279 98.816 220.279 220.279S377.463 476.279 256 476.279z" fill="#000000" opacity="1" data-original="#000000"></path><path d="M248.425 323.924c-14.153 0-25.61 11.794-25.61 25.946 0 13.817 11.12 25.948 25.61 25.948s25.946-12.131 25.946-25.948c0-14.152-11.794-25.946-25.946-25.946zM252.805 127.469c-45.492 0-66.384 26.959-66.384 45.155 0 13.142 11.12 19.208 20.218 19.208 18.197 0 10.784-25.948 45.155-25.948 16.848 0 30.328 7.414 30.328 22.915 0 18.196-18.871 28.642-29.991 38.077-9.773 8.423-22.577 22.24-22.577 51.22 0 17.522 4.718 22.577 18.533 22.577 16.511 0 19.881-7.413 19.881-13.817 0-17.522.337-27.631 18.871-42.121 9.098-7.076 37.74-29.991 37.74-61.666s-28.642-55.6-71.774-55.6z" fill="#000000" opacity="1" data-original="#000000"></path></g></svg>
+                            </div>
+                            <div>
+                                <p class="font-medium">Centre d'aide</p>
+                            </div>
+                        </div>
+                        <div class="flex justify-start items-center border-t-2 pt-2 pl-2 m-2 gap-2">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" class="w-5 h-5" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve"><g><g fill="#000"><path d="M14.945 1.25c-1.367 0-2.47 0-3.337.117-.9.12-1.658.38-2.26.981-.524.525-.79 1.17-.929 1.928-.135.737-.161 1.638-.167 2.72a.75.75 0 0 0 1.5.008c.006-1.093.034-1.868.142-2.457.105-.566.272-.895.515-1.138.277-.277.666-.457 1.4-.556.755-.101 1.756-.103 3.191-.103h1c1.436 0 2.437.002 3.192.103.734.099 1.122.28 1.4.556s.456.665.555 1.4c.102.754.103 1.756.103 3.191v8c0 1.435-.001 2.437-.103 3.192-.099.734-.279 1.122-.556 1.399s-.665.457-1.399.556c-.755.101-1.756.103-3.192.103h-1c-1.435 0-2.436-.002-3.192-.103-.733-.099-1.122-.28-1.399-.556-.243-.243-.41-.572-.515-1.138-.108-.589-.136-1.364-.142-2.457a.75.75 0 1 0-1.5.008c.006 1.082.032 1.983.167 2.72.14.758.405 1.403.93 1.928.601.602 1.36.86 2.26.982.866.116 1.969.116 3.336.116h1.11c1.368 0 2.47 0 3.337-.117.9-.12 1.658-.38 2.26-.981.602-.602.86-1.36.982-2.26.116-.867.116-1.97.116-3.337v-8.11c0-1.367 0-2.47-.116-3.337-.121-.9-.38-1.658-.982-2.26-.602-.602-1.36-.86-2.26-.981-.867-.117-1.97-.117-3.337-.117z" fill="#000000" opacity="1" data-original="#000000"></path><path d="M15 11.25a.75.75 0 0 1 0 1.5H4.027l1.961 1.68a.75.75 0 1 1-.976 1.14l-3.5-3a.75.75 0 0 1 0-1.14l3.5-3a.75.75 0 1 1 .976 1.14l-1.96 1.68z" fill="#000000" opacity="1" data-original="#000000"></path></g></g></svg>
+                            </div>
+                            <div>
+                                <p class="font-medium">Se Déconnecter</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        </nav>
+        <div class="flex grow pt-[4.1rem]">
+            <div id="side-bar" class="bg-slate-50 w-96 border-x-4-slate-500 hidden sm:block flex flex-col items-center gap-3 p-5 ">
+                <button class="flex gap-2 bg-slate-300 justify-start items-center px-4 py-2 rounded-md w-full">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 511 511.998" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-6 h-6"><g><path d="M501.426 238.11 419.203 197l82.223-41.113c14.707-7.352 14.722-28.414 0-35.778l-236-118a20.022 20.022 0 0 0-17.89 0l-236 118c-14.708 7.356-14.723 28.418 0 35.778L93.757 197l-82.223 41.11c-14.707 7.355-14.722 28.413 0 35.777L93.758 315l-82.223 41.11c-14.707 7.355-14.722 28.413 0 35.777l236 118a20.01 20.01 0 0 0 17.89 0l236-118c14.708-7.356 14.723-28.414 0-35.778L419.204 315l82.223-41.113c14.707-7.352 14.722-28.414 0-35.778zM256.48 42.36 447.758 138 256.48 233.637 65.203 138zM447.758 374 256.48 469.637 65.203 374l73.277-36.64 109.055 54.527a20.01 20.01 0 0 0 17.89 0l109.055-54.528zM256.48 351.637 65.203 256l73.277-36.64 109.055 54.527a20.01 20.01 0 0 0 17.89 0l109.055-54.528L447.758 256zm0 0" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                    </div>
+                    <div class="">
+                        <p class="text-xl font-bold ">Projets</p>
+                    </div>
+                </button>
+                <button class="flex gap-2 justify-start items-center px-4 py-2 rounded-md w-full">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.5" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-6 h-6"><g><path d="M510.156 401.843 480.419 315.3c14.334-29.302 21.909-61.89 21.96-94.679.088-57.013-21.97-110.92-62.112-151.79-40.15-40.878-93.652-63.889-150.652-64.792-59.105-.934-114.661 21.548-156.428 63.314-40.274 40.273-62.612 93.366-63.319 150.102-39.694 29.886-63.123 76.481-63.046 126.25.037 23.29 5.279 46.441 15.212 67.376L1.551 470.689c-3.521 10.247-.949 21.373 6.713 29.035 5.392 5.393 12.501 8.264 19.812 8.264 3.076 0 6.188-.508 9.223-1.551l59.609-20.483c20.935 9.933 44.086 15.175 67.376 15.212h.248c50.51-.002 97.46-24.035 127.237-64.702 30.987-.816 61.646-8.317 89.363-21.876l86.544 29.738a33.696 33.696 0 0 0 10.959 1.843c8.688 0 17.136-3.412 23.545-9.822 9.104-9.105 12.16-22.326 7.976-34.504zM164.53 470.69h-.199c-20.614-.031-41.085-5.113-59.196-14.695a15.244 15.244 0 0 0-12.078-.942l-61.123 21.003 21.003-61.122a15.24 15.24 0 0 0-.942-12.078c-9.582-18.112-14.664-38.582-14.696-59.197-.051-33.159 12.848-64.588 35.405-88.122 7.368 44.916 28.775 86.306 61.957 118.898 32.937 32.351 74.339 52.949 119.011 59.683-23.588 23.249-55.384 36.572-89.142 36.572zm316.098-55.893c-.867.867-1.895 1.103-3.051.705l-92.648-31.836a15.232 15.232 0 0 0-12.077.942c-26.453 13.994-56.345 21.416-86.447 21.462h-.288c-100.863 0-184.176-81.934-185.774-182.773-.805-50.785 18.513-98.514 54.394-134.395 35.881-35.881 83.618-55.192 134.396-54.392 100.936 1.601 182.926 85.068 182.77 186.063-.047 30.102-7.468 59.995-21.461 86.446a15.24 15.24 0 0 0-.942 12.078l31.835 92.648c.397 1.16.159 2.187-.707 3.052z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M376.892 139.512h-181.56c-8.416 0-15.238 6.823-15.238 15.238 0 8.416 6.823 15.238 15.238 15.238h181.56c8.416 0 15.238-6.823 15.238-15.238s-6.822-15.238-15.238-15.238zM376.892 202.183h-181.56c-8.416 0-15.238 6.823-15.238 15.238s6.823 15.238 15.238 15.238h181.56c8.416 0 15.238-6.823 15.238-15.238s-6.822-15.238-15.238-15.238zM307.004 264.852H195.331c-8.416 0-15.238 6.823-15.238 15.238 0 8.416 6.823 15.238 15.238 15.238h111.672c8.416 0 15.238-6.823 15.238-15.238s-6.821-15.238-15.237-15.238z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                    </div>
+                    <div class="">
+                        <p class="text-xl text-slate-600 font-bold ">Messages</p>
+                    </div>
+                </button>
+                <button class="flex gap-2 justify-start items-center px-4 py-2 rounded-md w-full">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 511 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-6 h-6"><g><path d="m500.629 311.332-27.961-16.145c-30.16-17.414-30.188-60.949 0-78.375l27.96-16.144c7.173-4.145 9.63-13.316 5.49-20.488L445.874 75.824c-4.137-7.168-13.316-9.633-20.492-5.492l-27.961 16.145c-30.156 17.41-67.863-4.325-67.863-39.188V15c0-8.285-6.715-15-15-15H194.07c-8.28 0-15 6.715-15 15v32.29c0 34.827-37.672 56.616-67.863 39.187l-27.96-16.145c-7.169-4.14-16.349-1.684-20.493 5.492L2.512 180.18C-1.628 187.352.828 196.527 8 200.668l27.96 16.144c30.161 17.415 30.188 60.95 0 78.375L8.005 311.332c-7.176 4.145-9.633 13.316-5.492 20.488l60.242 104.356c4.137 7.168 13.316 9.637 20.492 5.492l27.961-16.145c30.152-17.414 67.863 4.32 67.863 39.188V497c0 8.285 6.715 15 15 15h120.485c8.285 0 15-6.715 15-15v-32.29c0-34.82 37.672-56.62 67.867-39.187l27.96 16.145c7.169 4.14 16.348 1.684 20.49-5.492l60.245-104.356c4.14-7.172 1.684-16.343-5.488-20.488zm-73.238 96.855-14.97-8.644c-50.16-28.965-112.862 7.195-112.862 65.168V482H209.07v-17.29c0-57.92-62.664-94.155-112.863-65.167l-14.969 8.644-45.246-78.375 14.969-8.644c50.156-28.957 50.207-101.348.004-130.336l-14.973-8.645 45.246-78.375 14.969 8.645c50.16 28.965 112.863-7.195 112.863-65.168V30h90.489v17.29c0 57.92 62.66 94.155 112.863 65.167l14.969-8.645 45.246 78.375-14.969 8.645c-50.156 28.957-50.207 101.348-.004 130.336l14.973 8.644zm0 0" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M254.316 151c-57.894 0-104.992 47.102-104.992 105s47.098 105 104.992 105c57.891 0 104.989-47.102 104.989-105s-47.098-105-104.989-105zm0 180c-41.351 0-74.992-33.645-74.992-75s33.64-75 74.992-75c41.348 0 74.989 33.645 74.989 75s-33.64 75-74.989 75zm0 0" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
+                    </div>
+                    <div class="">
+                        <p class="text-xl text-slate-600 font-bold ">Paramètres</p>
+                    </div>
+                </button>
+            </div>
+<!-- Project Card -->
+<div class="flex flex-col m-2">     
+    <section class="bg-[#F9EADC] p-6 rounded-xl shadow-md mx-auto my-8 mb-4 w-full max-w-5xl flex flex-col md:flex-row items-center justify-between">
+        <div class="m-2">
+            <h2 class="text-3xl font-bold mb-2">FitMind: Mental Wellness <br>Tracker</h2>
+            <p class="text-gray-700 text-sm">
+                FitMind is an app that helps users track their mental health through mood journaling, 
+                stress level assessments, and mindfulness exercises. With personalized insights and tips, 
+                the app supports mental well-being by encouraging daily self-care habits and fostering 
+                emotional resilience.
+            </p>
+        </div>
+        <div class="flex items-center justify-center w-full h-auto">
+            <div>
+                <svg class="w-32 h-32" viewBox="0 0 40 40">
+                    <!-- Background circle -->
+                    <circle
+                        class="text-slate-300"
+                        stroke="currentColor"
+                        stroke-width="6"
+                        fill="none"
+                        cx="20"
+                        cy="20"
+                        r="16"
+                    />
+                    <!-- Foreground circle (for percentage) -->
+                    <circle
+                        class="text-orange-500"
+                        stroke="currentColor"
+                        stroke-width="6"
+                        stroke-dasharray="65, 100"
+                        fill="none"
+                        cx="20"
+                        cy="20"
+                        r="16"
+                    />
+                    <!-- Adjusted position for centered text -->
+                    <text x="20" y="22" class="percentage" text-anchor="middle" fill="#ff9f1c" font-size="8" font-weight="bold">65%</text>
+                </svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Members -->
+<div class="bg-gray-100 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4 m-4 mt-0.5">
+    <!-- Bloc 1 -->
+    <div class="relative bg-pink-200 rounded-lg shadow-md p-5 m-2 flex flex-col justify-between min-h-[100px]"> 
+        <h3 class="font-belanosima text-2xl font-semibold text-black mb-3">Design the homepage</h3>
+        <div class="absolute bottom-2 right-2 w-8 h-8 bg-lime-700 rounded-full flex items-center justify-center">
+            <img src="base1.png" class="w-full h-full rounded-full object-cover">
+        </div>
+    </div>
+
+    <!-- Bloc 2 -->
+    <div class="relative bg-pink-200 rounded-lg shadow-md p-5 m-2 flex flex-col justify-between min-h-[100px]">
+        <h3 class="font-belanosima text-2xl font-semibold text-black mb-3">Develop the mood journaling form</h3>
+        <div class="absolute bottom-2 right-2 w-8 h-8 bg-lime-700 rounded-full flex items-center justify-center">
+            <img src="base1.png" class="w-full h-full rounded-full object-cover">
+        </div>
+    </div>
+
+    <!-- Bloc 3 -->
+    <div class="relative bg-pink-200 rounded-lg shadow-md p-5 m-2 flex flex-col justify-between min-h-[100px]">
+        <h3 class="font-belanosima text-2xl font-semibold text-black mb-3">Build the stress level assessment module</h3>
+        <div class="absolute bottom-2 right-2 w-8 h-8 bg-lime-700 rounded-full flex items-center justify-center">
+            <img src="base1.png" class="w-full h-full rounded-full object-cover">
+        </div>
+    </div>
+
+    <!-- Bloc 4 -->
+    <div class="relative bg-pink-200 rounded-lg shadow-md p-5 m-2 flex flex-col justify-between min-h-[100px]">
+        <h3 class="font-belanosima text-2xl font-semibold text-black mb-3">Create the database for mood tracking</h3>
+        <div class="absolute bottom-2 right-2 w-8 h-8 bg-lime-700 rounded-full flex items-center justify-center">
+            <img src="base1.png" class="w-full h-full rounded-full object-cover">
+        </div>
+    </div>
+
+    <!-- Bloc 5 -->
+    <div class="relative bg-pink-200 rounded-lg shadow-md p-5 m-2 flex flex-col justify-between min-h-[100px]">
+        <h3 class="font-belanosima text-2xl font-semibold text-black mb-3">Display personalized insights</h3>
+        <div class="absolute bottom-2 right-0 w-14 h-8 flex items-center justify-center translate-x-5">
+            <img src="base2.png" class="object-contain w-full h-full">
+        </div>
+    </div>
+
+    <!-- Bloc 6 -->
+    <div class="relative bg-pink-200 rounded-lg shadow-md p-5 m-2 flex flex-col justify-between min-h-[100px]">
+        <h3 class="font-belanosima text-2xl font-semibold text-black mb-3">Add daily reminder notifications</h3>
+        <div class="absolute bottom-2 right-0 w-14 h-8 flex items-center justify-center translate-x-5">
+            <img src="base2.png" class="object-contain w-full h-full">
+        </div>
+    </div>
+</div>
+
+
+</div>
+
+</div>
+
+</div>
+
+ 
+</body>
+</html>
