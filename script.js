@@ -15,10 +15,36 @@ function toggleAddProjects() {
     dropdown.classList.toggle("hidden");
 }
 
-// function toggleSearchBar() {
-//     const dropdown = document.getElementById("searchbar");
-//     dropdown.classList.toggle("hidden");
-// }
+// Toggle the search bar and button visibility
+function toggleSearchBar() {
+    const searchBar = document.getElementById("searchbar");
+    const searchButton = document.getElementById("buttonOfSearch");
+    
+    searchBar.classList.toggle("hidden");
+    searchButton.classList.toggle("hidden");  // Hide or show the search button
+
+    // Add an event listener to the document to detect clicks outside
+    if (!searchBar.classList.contains("hidden")) {
+        document.addEventListener("click", outsideClickListener);
+    } else {
+        document.removeEventListener("click", outsideClickListener);
+    }
+}
+
+// Function to hide the search bar and button if clicked outside
+function outsideClickListener(event) {
+    const searchBar = document.getElementById("searchbar");
+    const searchButton = document.getElementById("buttonOfSearch");
+
+    // Check if the click is outside both the search bar and the search button
+    if (!searchBar.contains(event.target) && !searchButton.contains(event.target)) {
+        searchBar.classList.add("hidden");
+        searchButton.classList.remove("hidden");  // Show the search button again
+        document.removeEventListener("click", outsideClickListener);
+    }
+}
+
+
 
 function annulerAddProject() {
     const dropdown = document.getElementById("projectsAddPrompt");
