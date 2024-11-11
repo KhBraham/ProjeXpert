@@ -15,6 +15,11 @@ function toggleAddProjects() {
     dropdown.classList.toggle("hidden");
 }
 
+// function toggleSearchBar() {
+//     const dropdown = document.getElementById("searchbar");
+//     dropdown.classList.toggle("hidden");
+// }
+
 function annulerAddProject() {
     const dropdown = document.getElementById("projectsAddPrompt");
     dropdown.classList.add("hidden");
@@ -75,3 +80,10 @@ function annulerAddMembers() {
     const dropdown = document.getElementById("membersAddPrompt");
     dropdown.classList.add("hidden");
 }
+
+const fileInput = document.getElementById("projectImage");
+const fileNameDisplay = document.getElementById("fileName");
+
+fileInput.addEventListener("change", () => {
+    fileNameDisplay.textContent = fileInput.files.length > 0 ? fileInput.files[0].name : "Aucun fichier n’a été sélectionné";
+});

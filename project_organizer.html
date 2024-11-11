@@ -13,12 +13,12 @@
         <div class=" bg-white w-[22rem] sm:w-[40rem] max-w-full grid grid-rows-[auto,1fr,auto] rounded-2xl overflow-hidden">
             <div class="p-4 bg-slate-100 border-b"><h2 class="font-semibold">Ajouter un Membre</h2></div>
             <div class="p-6 grid gap-3">
-                <p>Choisissez une des deux options pour ajouter des membres à votre projet</p><br>
+                <div><p>Choisissez une des deux options pour ajouter des membres à votre projet</p></div>
                 <div class="border-2 border-slate-600 p-4 rounded-xl grid grid-rows-[auto,1fr]">
                     <div class="flex flex-col gap-2 mb-3 pl-3">
                         <div>
                             <label for="searchInput" class="mr-2 font-semibold text-gray-600">Le Nom de l'utilisateur :</label>
-                            <input type="text" name="nom" placeholder="nouveau membre" id="nom" class="border-2 focus:outline-none rounded-xl p-2"  >
+                            <input type="email" name="email" placeholder="name@company.com" id="nom" class="border-2 focus:outline-none rounded-xl p-2">
                         </div>
                         
                     </div>
@@ -27,12 +27,12 @@
                     </div>
                 </div>
                 <div class="border-2 border-slate-600 p-4 rounded-xl grid grid-rows-[auto,1fr]">
-                    <h3 class="font-semibold">Code du Projet</h3>
+                    <h3 class="font-semibold mb-2">Code du Projet</h3>
                     <div class="flex flex-col gap-2 mb-3 pl-3">
                         
                         <div>
                             <label for="searchInput" class="mr-2 font-semibold text-gray-600">Le Code :</label>
-                            <input type="text" name="code" value="Lu87rj300" id="code" class="border-2 focus:outline-none rounded-xl p-2"  >
+                            <input type="text" name="code" value="Lu87rj300" id="code" class="border-2 focus:outline-none rounded-xl p-2" disabled>
                         </div>
                     </div>
                     <div class="border-t-2 flex justify-end items-center pt-3">
@@ -130,7 +130,7 @@
                         <a href="dashboard.html" target="_self" class="text-xl font-bold">Projets</a>
                     </div>
                 </button>
-                <button class="flex gap-2 justify-start items-center px-4 py-2 rounded-md w-full">
+                <button class="flex gap-2 hover:bg-slate-200 justify-start items-center px-4 py-2 rounded-md w-full">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.5" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 511.999 511.999" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-6 h-6"><g><path d="M510.156 401.843 480.419 315.3c14.334-29.302 21.909-61.89 21.96-94.679.088-57.013-21.97-110.92-62.112-151.79-40.15-40.878-93.652-63.889-150.652-64.792-59.105-.934-114.661 21.548-156.428 63.314-40.274 40.273-62.612 93.366-63.319 150.102-39.694 29.886-63.123 76.481-63.046 126.25.037 23.29 5.279 46.441 15.212 67.376L1.551 470.689c-3.521 10.247-.949 21.373 6.713 29.035 5.392 5.393 12.501 8.264 19.812 8.264 3.076 0 6.188-.508 9.223-1.551l59.609-20.483c20.935 9.933 44.086 15.175 67.376 15.212h.248c50.51-.002 97.46-24.035 127.237-64.702 30.987-.816 61.646-8.317 89.363-21.876l86.544 29.738a33.696 33.696 0 0 0 10.959 1.843c8.688 0 17.136-3.412 23.545-9.822 9.104-9.105 12.16-22.326 7.976-34.504zM164.53 470.69h-.199c-20.614-.031-41.085-5.113-59.196-14.695a15.244 15.244 0 0 0-12.078-.942l-61.123 21.003 21.003-61.122a15.24 15.24 0 0 0-.942-12.078c-9.582-18.112-14.664-38.582-14.696-59.197-.051-33.159 12.848-64.588 35.405-88.122 7.368 44.916 28.775 86.306 61.957 118.898 32.937 32.351 74.339 52.949 119.011 59.683-23.588 23.249-55.384 36.572-89.142 36.572zm316.098-55.893c-.867.867-1.895 1.103-3.051.705l-92.648-31.836a15.232 15.232 0 0 0-12.077.942c-26.453 13.994-56.345 21.416-86.447 21.462h-.288c-100.863 0-184.176-81.934-185.774-182.773-.805-50.785 18.513-98.514 54.394-134.395 35.881-35.881 83.618-55.192 134.396-54.392 100.936 1.601 182.926 85.068 182.77 186.063-.047 30.102-7.468 59.995-21.461 86.446a15.24 15.24 0 0 0-.942 12.078l31.835 92.648c.397 1.16.159 2.187-.707 3.052z" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M376.892 139.512h-181.56c-8.416 0-15.238 6.823-15.238 15.238 0 8.416 6.823 15.238 15.238 15.238h181.56c8.416 0 15.238-6.823 15.238-15.238s-6.822-15.238-15.238-15.238zM376.892 202.183h-181.56c-8.416 0-15.238 6.823-15.238 15.238s6.823 15.238 15.238 15.238h181.56c8.416 0 15.238-6.823 15.238-15.238s-6.822-15.238-15.238-15.238zM307.004 264.852H195.331c-8.416 0-15.238 6.823-15.238 15.238 0 8.416 6.823 15.238 15.238 15.238h111.672c8.416 0 15.238-6.823 15.238-15.238s-6.821-15.238-15.237-15.238z" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
                     </div>
@@ -138,7 +138,7 @@
                         <p class="text-xl text-slate-600 font-bold ">Messages</p>
                     </div>
                 </button>
-                <button class="flex gap-2 justify-start items-center px-4 py-2 rounded-md w-full">
+                <button class="flex gap-2 hover:bg-slate-200 justify-start items-center px-4 py-2 rounded-md w-full">
                     <div>
                         <svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" x="0" y="0" viewBox="0 0 511 512" style="enable-background:new 0 0 512 512" xml:space="preserve" class="w-6 h-6"><g><path d="m500.629 311.332-27.961-16.145c-30.16-17.414-30.188-60.949 0-78.375l27.96-16.144c7.173-4.145 9.63-13.316 5.49-20.488L445.874 75.824c-4.137-7.168-13.316-9.633-20.492-5.492l-27.961 16.145c-30.156 17.41-67.863-4.325-67.863-39.188V15c0-8.285-6.715-15-15-15H194.07c-8.28 0-15 6.715-15 15v32.29c0 34.827-37.672 56.616-67.863 39.187l-27.96-16.145c-7.169-4.14-16.349-1.684-20.493 5.492L2.512 180.18C-1.628 187.352.828 196.527 8 200.668l27.96 16.144c30.161 17.415 30.188 60.95 0 78.375L8.005 311.332c-7.176 4.145-9.633 13.316-5.492 20.488l60.242 104.356c4.137 7.168 13.316 9.637 20.492 5.492l27.961-16.145c30.152-17.414 67.863 4.32 67.863 39.188V497c0 8.285 6.715 15 15 15h120.485c8.285 0 15-6.715 15-15v-32.29c0-34.82 37.672-56.62 67.867-39.187l27.96 16.145c7.169 4.14 16.348 1.684 20.49-5.492l60.245-104.356c4.14-7.172 1.684-16.343-5.488-20.488zm-73.238 96.855-14.97-8.644c-50.16-28.965-112.862 7.195-112.862 65.168V482H209.07v-17.29c0-57.92-62.664-94.155-112.863-65.167l-14.969 8.644-45.246-78.375 14.969-8.644c50.156-28.957 50.207-101.348.004-130.336l-14.973-8.645 45.246-78.375 14.969 8.645c50.16 28.965 112.863-7.195 112.863-65.168V30h90.489v17.29c0 57.92 62.66 94.155 112.863 65.167l14.969-8.645 45.246 78.375-14.969 8.645c-50.156 28.957-50.207 101.348-.004 130.336l14.973 8.644zm0 0" fill="#000000" opacity="1" data-original="#000000" class=""></path><path d="M254.316 151c-57.894 0-104.992 47.102-104.992 105s47.098 105 104.992 105c57.891 0 104.989-47.102 104.989-105s-47.098-105-104.989-105zm0 180c-41.351 0-74.992-33.645-74.992-75s33.64-75 74.992-75c41.348 0 74.989 33.645 74.989 75s-33.64 75-74.989 75zm0 0" fill="#000000" opacity="1" data-original="#000000" class=""></path></g></svg>
                     </div>
