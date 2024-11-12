@@ -107,6 +107,16 @@ function annulerAddMembers() {
     dropdown.classList.add("hidden");
 }
 
+function toggleUpload() {
+    const dropdown = document.getElementById("upload");
+    dropdown.classList.toggle("hidden");
+}
+
+function annulerUpload() {
+    const dropdown = document.getElementById("upload");
+    dropdown.classList.add("hidden");
+}
+
 const fileInput = document.getElementById("projectImage");
 const fileNameDisplay = document.getElementById("fileName");
 
