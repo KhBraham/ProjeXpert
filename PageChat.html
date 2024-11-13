@@ -8,32 +8,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     <script src="script.js"></script>
-    <style>
-        .chat-gradient {
-            background: linear-gradient(180deg, #FFFFFF 0%, #F0F2F5 100%);
-        }
-        .message-input {
-            background: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
-        }
-        .project-card {
-            transition: all 0.2s ease;
-        }
-        .project-card:hover {
-            transform: scale(1.02);
-        }
-        .conversation-item {
-            transition: background-color 0.2s ease;
-        }
-        .message-bubble-right {
-            border-radius: 18px;
-            max-width: 60%;
-        }
-        .message-bubble-left {
-            border-radius: 18px;
-            max-width: 60%;
-        }
-    </style>
+
 </head>
 <body class="size-full bg-slate-100 relative">
     
@@ -137,22 +112,22 @@
                     <div class="p-4 ml-20 ">
                         <div class="flex space-x-4 overflow-x-auto pb-4 ">
                             <!-- Project Cards -->
-                            <div class="flex-shrink-0 w-32 h-32 rounded-[2rem] bg-[#FFF5EB] flex items-center justify-center cursor-pointer project-card border border-[#FFE4D6]">
+                            <div class="flex-shrink-0 w-32 h-32 rounded-[2rem] bg-[#FFF5EB] flex items-center justify-center cursor-pointer transform transition-transform duration-200 hover:scale-105 border border-[#FFE4D6]">
                                 <i data-feather="image" class="w-8 h-8 text-[#D4A072]"></i>
                             </div>
-                            <div class="flex-shrink-0 w-36 h-32 rounded-[2rem] bg-[#FFE4D6] flex items-center justify-center cursor-pointer project-card border border-[#FFD4BE]">
+                            <div class="flex-shrink-0 w-36 h-32 rounded-[2rem] bg-[#FFE4D6] flex items-center justify-center cursor-pointer transform transition-transform duration-200 hover:scale-105 border border-[#FFD4BE]">
                                 <i data-feather="image" class="w-8 h-8 text-[#D4A072]"></i>
                             </div>
-                            <div class="flex-shrink-0 w-32 h-32 rounded-[2rem] bg-[#FFF5EB] flex items-center justify-center cursor-pointer project-card border border-[#FFE4D6]">
+                            <div class="flex-shrink-0 w-32 h-32 rounded-[2rem] bg-[#FFF5EB] flex items-center justify-center cursor-pointer transform transition-transform duration-200 hover:scale-105 border border-[#FFE4D6]">
                                 <i data-feather="image" class="w-8 h-8 text-[#D4A072]"></i>
                             </div>
-                            <div class="flex-shrink-0 w-32 h-32 rounded-[2rem] bg-[#FFF5EB] flex items-center justify-center cursor-pointer project-card border border-[#FFE4D6]">
+                            <div class="flex-shrink-0 w-32 h-32 rounded-[2rem] bg-[#FFF5EB] flex items-center justify-center cursor-pointer transform transition-transform duration-200 hover:scale-105 border border-[#FFE4D6]">
                                 <i data-feather="image" class="w-8 h-8 text-[#D4A072]"></i>
                             </div>
-                            <div class="flex-shrink-0 w-32 h-32 rounded-[2rem] bg-[#FFF5EB] flex items-center justify-center cursor-pointer project-card border border-[#FFE4D6]">
+                            <div class="flex-shrink-0 w-32 h-32 rounded-[2rem] bg-[#FFF5EB] flex items-center justify-center cursor-pointer transform transition-transform duration-200 hover:scale-105 border border-[#FFE4D6]">
                                 <i data-feather="image" class="w-8 h-8 text-[#D4A072]"></i>
                             </div>
-                            <div class="flex-shrink-0 w-32 h-32 rounded-[2rem] bg-[#FFF5EB] flex items-center justify-center cursor-pointer project-card border border-[#FFE4D6]">
+                            <div class="flex-shrink-0 w-32 h-32 rounded-[2rem] bg-[#FFF5EB] flex items-center justify-center cursor-pointer transform transition-transform duration-200 hover:scale-105 border border-[#FFE4D6]">
                                 <i data-feather="image" class="w-8 h-8 text-[#D4A072]"></i>
                             </div>
                         </div>
@@ -167,7 +142,7 @@
                             <div class="space-y-1 p-3">
                                 <!-- Active conversation -->
                                 
-                                <div class="flex items-start space-x-3 p-3 bg-[#EECE93] rounded-xl cursor-pointer conversation-item relative">
+                                <div class="flex items-start space-x-3 p-3 bg-[#EECE93] rounded-xl cursor-pointer transition-colors duration-200 relative">
                                     <div class="absolute left-[-12px] top-1/2 transform -translate-y-1/2 w-1.5 h-1.5 rounded-full bg-yellow-400"></div>
                                     <div class="w-8 h-8 rounded-full bg-pink-400 flex-shrink-0 ml-2"></div>
                                     <div class="flex-1">
@@ -180,7 +155,7 @@
                                 </div>
 
                                 <!-- Other conversations -->
-                                <div class="flex items-start bg-[#F1D9ABA1] space-x-3 p-3 hover:bg-gray-50 rounded-xl cursor-pointer conversation-item">
+                                <div class="flex items-start bg-[#F1D9ABA1] space-x-3 p-3 hover:bg-gray-50 rounded-xl cursor-pointer transition-colors duration-200">
                                     <div class="w-8 h-8 rounded-full bg-green-400 flex-shrink-0 ml-3"></div>
                                     <div class="flex-1">
                                         <div class="flex justify-between items-center">
@@ -191,7 +166,7 @@
                                     </div>
                                 </div>
 
-                                <div class="flex items-start bg-[#F1D9ABA1] space-x-3 p-3 hover:bg-gray-50 rounded-xl cursor-pointer conversation-item">
+                                <div class="flex items-start bg-[#F1D9ABA1] space-x-3 p-3 hover:bg-gray-50 rounded-xl cursor-pointer transition-colors duration-200">
                                     <div class="w-8 h-8 rounded-full bg-blue-400 flex-shrink-0 ml-3"></div>
                                     <div class="flex-1">
                                         <div class="flex justify-between items-center">
@@ -202,7 +177,7 @@
                                     </div>
                                 </div>
 
-                                <div class="flex items-start bg-[#F1D9ABA1] space-x-3 p-3 hover:bg-gray-50 rounded-xl cursor-pointer conversation-item">
+                                <div class="flex items-start bg-[#F1D9ABA1] space-x-3 p-3 hover:bg-gray-50 rounded-xl cursor-pointer transition-colors duration-200">
                                     <div class="w-8 h-8 rounded-full bg-purple-400 flex-shrink-0 ml-3"></div>
                                     <div class="flex-1">
                                         <div class="flex justify-between items-center">
@@ -222,25 +197,25 @@
                             <div class="flex-1 overflow-y-auto p-4 space-y-4">
                                 <!-- Messages -->
                                 <div class="flex justify-end">
-                                    <div class="message-bubble-right bg-blue-400 text-white px-4 py-2">
+                                    <div class="rounded-[18px] max-w-[60%] bg-blue-400 text-white px-4 py-2">
                                         Let's get lunch. How about pizza?
                                     </div>
                                 </div>
 
                                 <div class="flex justify-start">
-                                    <div class="message-bubble-left bg-[#B9B5CD] px-4 py-2 text-gray-800">
+                                    <div class="rounded-[18px] max-w-[60%] bg-[#B9B5CD] px-4 py-2 text-gray-800">
                                         Let's do it! I'm in a meeting until noon.
                                     </div>
                                 </div>
 
                                 <div class="flex justify-end">
-                                    <div class="message-bubble-right bg-blue-400 text-white px-4 py-2">
+                                    <div class="rounded-[18px] max-w-[60%] bg-blue-400 text-white px-4 py-2">
                                         That's perfect. There's a new place on Main St I've been wanting to check out. I hear their hawaiian pizza is off the hook!
                                     </div>
                                 </div>
 
                                 <div class="flex justify-start">
-                                    <div class="message-bubble-left bg-[#B9B5CD] px-4 py-2 text-gray-800">
+                                    <div class="rounded-[18px] max-w-[60%] bg-[#B9B5CD] px-4 py-2 text-gray-800">
                                         I don't know why people are so anti pineapple pizza. I kind of like it.
                                     </div>
                                 </div>
@@ -248,7 +223,7 @@
 
         <!-- Zone de saisie -->
         <div class="p-4">
-            <div class="message-input flex items-center rounded-md p-2 h-12 border border-white-300 bg-[#F5F5F5]">
+            <div class="bg-white/95 shadow-sm flex items-center rounded-md p-2 h-12 border border-white-300 bg-[#F5F5F5]">
                 <button class="p-2 hover:bg-gray-100 rounded-full">
                     <i data-feather="camera" class="w-6 h-6 text-gray-400"></i>
                 </button>
